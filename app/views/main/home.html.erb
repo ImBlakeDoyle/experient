@@ -1,6 +1,71 @@
-<h1>We are in our home page</h1>
-
-<div class="sign_in">
-    <%=link_to "Sign in", new_user_session_path%>
-    <%=link_to "Sign up", new_user_registration_path%>
+<div class="jumbotron">
+<% if user_signed_in? %>
+    <h1 class="display-4">Hey <%= current_user.first_name.capitalize %></h1>
+<% else %>
+    <h1 class="display-4">Welcome!</h1>
+    <div class="sign_buttons ">
+    <%=link_to "Sign in", new_user_session_path, class: "btn btn-primary sign_in_button"%>
+    <%=link_to "Sign up", new_user_registration_path, class: "btn btn-primary"%>
 </div>
+<% end %>
+    <p class="underline">What would you like to search today?</p>
+    <%# <% if current_user.is_supplier == true && current_user.business%> 
+        <%# <h4><a class="business-link" href="/profile"><%= current_user.business.trading_name%></a></h4> 
+    <%# <% end %> 
+<div class="input-group input-group-sm mb-3">
+<%= form_tag search_result_path, :class => "searchbar", :method => 'get' do%>
+<div class="input-group input-group-sm mb-3">
+    <%= text_field_tag :search, params[:search], :class => "form-control"%>
+    <%= submit_tag "Search", :class => "btn btn-primary " %>
+</div>
+<%end%>
+<br>
+
+    <%= link_to "Advanced Search", advanced_search_path, class: "advancedsearch search_link" %> 
+</div>
+</div>
+
+<h2 class="featured_title"> Featured Products </h2>
+
+<div class="featured">
+<% @featured.each do |x| %>
+<div class="card" style="width: 18rem;">
+<%=link_to business_product_path(business_id: x.user.id, id: x.id) do %>
+<%= image_tag (x.image_url), class: "card-img-top", src: ".../100px180/", alt: "Card image cap" %>
+<% end %>
+    <div class="card-body">
+    <h5 class="card-title"><%= x.name%></h5>
+    <p class="card-text"><%= x.description%></p>
+    <div class = "featured-cost">
+    $<%= x.cost%>
+    </div>
+    <%=link_to "Buy Me",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary"%>
+    <%=link_to "View Detail",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary"%>
+  </div>
+</div>
+<% end %>
+</div> 
+
+<!--
+<h2> Featured Products </h2>
+<div class = "featured">
+<% @featured.each do |x| %>
+<div class = "featured-content">
+<div class= "featured-name">
+    <%= x.name%>
+</div>
+<div class = "featured-image">
+    <%= image_tag x.image_url%>
+</div>
+<div class = "featured-description">
+    <%= x.description%>
+</div>
+<div class = "featured-cost">
+    $<%= x.cost%>
+</div>
+<span><%=link_to "View Detail",business_product_path(business_id: x.user.id, id: x.id)%></span>
+<span><%=link_to "Buy Me",business_product_path(business_id: x.user.id, id: x.id)%></span>
+</div>
+<br>
+<% end %>
+</div> -->

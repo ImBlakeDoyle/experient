@@ -1,0 +1,175 @@
+
+<% if current_user.is_supplier == true %>
+  <div class="jumbotron picture_section">
+  <div>
+    <h4 class="bussiness_info_title">Business Information</h4>
+
+    <% @my_businesses.each do |business| %>
+    <p class="business_info">
+    <strong>Trading name:</strong>
+    <%= business.trading_name %>
+    </p>
+
+    <p class="business_info">
+    <strong>Registered business name:</strong>
+    <%= business.registered_business_name %>
+    </p>
+
+    <p class="business_info">
+    <strong>Business address:</strong>
+    <%= business.business_address %>
+    </p>
+
+    <p class="business_info">
+    <strong>Post code:</strong>
+    <%= business.post_code %>
+    </p>
+
+    <p class="business_info">
+    <strong>Abn:</strong>
+    <%= business.abn %>
+    </p>
+
+    <p class="business_info">
+    <strong>Phone number:</strong>
+    <%= business.phone_number %>
+    </p>
+
+    <%= link_to 'Edit business', edit_business_path(business), class: "btn btn-primary active_buttons" %>
+    <%= link_to "Edit user", edit_user_registration_path(current_user), class: "btn btn-primary active_buttons"%>
+    <%= link_to "New Product", new_business_product_path(business_id: @business.id), class: "btn btn-primary active_buttons"%> 
+    <%= link_to "History", history_path(business_id: @business.id), class: "btn btn-primary active_buttons"%>
+  </div>
+  <div class="profile_pic">
+    <div class="picture">
+        <%= image_tag current_user.avatar_url%>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<h1>My Active Products</h1>
+
+<div class="all_products">
+  <% @my_products.each do |x| if x.active?%>
+    <div class="card each_product" style="width: 18rem;">
+      <%=link_to business_product_path(business_id: x.user.id, id: x.id) do %>
+      <%= image_tag (x.image_url), class: "card-img-top", src: ".../100px180/", alt: "Card image cap" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= x.name%></h5>
+        <p class="card-text"><%= x.description%></p>
+        <div class = "featured-cost">
+          $<%= x.cost%>
+        </div>
+        <%=link_to "Edit",edit_business_product_path(id: x.id, business_id: x.user.id), class: "btn btn-primary active_buttons"%>
+        <%=link_to "View Detail",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary active_buttons"%>
+        <% if x.active? == true %>
+          <span><%= link_to 'Make Product Inactive', inactive_business_product_path(business_id: x.user.id, id: x.id), method: :put, class: "btn btn-primary active_buttons" %></span>
+        <% else %>
+          <span><%= link_to 'Make Product Active', inactive_business_product_path(business_id: x.user.id, id: x.id), method: :put, class: "btn btn-primary active_buttons" %></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div> 
+
+
+
+<% else %>
+
+
+  <div class="jumbotron picture_section">
+    <div>
+      <h4 class="bussiness_info_title">User Information</h4>
+
+      <% @my_user.each do |user| %>
+      <p class="business_info">
+      <strong>First name:</strong>
+      <%= user.first_name %>
+      </p>
+
+      <p class="business_info">
+      <strong>Last name:</strong>
+      <%= user.last_name %>
+      </p>
+
+      <p class="business_info">
+      <strong>Email:</strong>
+      <%= user.email %>
+      </p>
+
+      <p class="business_info">
+      <strong>Date of brith:</strong>
+      <%= user.date_of_birth %>
+      </p>
+
+      <p class="business_info">
+      <strong>Post code:</strong>
+      <%= user.post_code %>
+      </p>
+
+      <%= link_to "Edit user", edit_user_registration_path(current_user), class: "btn btn-primary active_buttons" %>
+    </div>
+    <div class="profile_pic">
+      <div class="picture">
+          <%= image_tag current_user.avatar_url%>
+      </div>
+    </div>
+    <% end %>
+    </div>
+
+  <h2> Purchases </h2>
+
+  <div> 
+  <% @transactions.each do |t| %>
+      <div class="card each_purchase">
+        <div>
+        Name: <%=t.product.name%>
+        </div>
+        <div>
+        Cost: $<%=t.product.cost%>
+        </div>
+        <div>
+          <% if t.product_review %>
+            <div>
+            Rating: <%= t.product_review.rating%>
+            </div>
+            <div>
+            Comment: <%= t.product_review.comment%>
+            </div>
+            <%= link_to "Edit review", edit_product_review_path(t.product_review.id), class: "btn btn-primary active_buttons"%>
+          <% else %>
+            <%= link_to "Create review", new_product_review_path(transaction_id: t.id), class: "btn btn-primary active_buttons" %>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+<% end %>
+
+<!--
+
+<h1>My Active Products</h1>
+
+  <% @my_products.each do |product| if product.active? %>
+    <h3>Title: <%= link_to product.name, business_product_path(business_id: product.user.id, id: product.id) %></h3>
+    <div>Price: $<%= product.cost %></div>
+    <div>Location: <%= product.location %></div>
+    <div>isActive?: <%= product.active %></div>
+    <div>Category: <%= product.category_id %></div>
+    <div>keywords: <%= product.keywords %></div>
+    <div>Description: <%= product.description %></div>
+    <div>
+    <span><%=link_to "View Detail",business_product_path(business_id: product.user.id, id: product.id)%></span>
+    | <span><%=link_to "Edit",edit_business_product_path(:id => product.id, :business_id => product.user.id)%></span>
+      <% if product.active? == true %>
+        | <span><%= link_to 'Make Product Inactive', inactive_business_product_path(business_id: product.user.id, id: product.id), method: :put %></span>
+      <% else %>
+        | <span><%= link_to 'Make Product Active', inactive_business_product_path(business_id: product.user.id, id: product.id), method: :put %></span>
+      <% end %>
+  </div>
+  <br>
+  <% end %> 
+  <% end %> 
+  -->

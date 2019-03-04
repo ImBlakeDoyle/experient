@@ -1,0 +1,39 @@
+<h1>Advance Search Result</h1>
+<%# <p>search > advance_search_result</p> %>
+
+<%if @result==[]%>
+<h5 class="error">Nothing to display, please try again </h4>
+<%else%>
+
+<div class="all_products">
+<% @result.each do |x| %>
+<div class="card each_product" style="width: 18rem;">
+<%=link_to business_product_path(business_id: x.user.id, id: x.id) do %>
+<%= image_tag (x.image_url), class: "card-img-top", src: ".../100px180/", alt: "Card image cap" %>
+<% end %>
+    <div class="card-body">
+    <h5 class="card-title"><%= x.name%></h5>
+    <p class="card-text"><%= x.description%></p>
+    <div class = "featured-cost">
+    $<%= x.cost%>
+    </div>
+    <%=link_to "Buy Me",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary"%>
+    <%=link_to "View Detail",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary"%>
+  </div>
+</div>
+<% end %>
+</div> 
+
+
+<!--
+  <% @result.each do |result| %>
+
+    <h3>Title: <%= result.name%></h3>
+    <div>Price: $<%= result.cost %></div>
+    <div>Location: <%= result.location %></div>
+    <div>keywords: <%= result.keywords %></div>
+    <div>Description: <%= result.description %></div>
+    
+    <br>
+  <% end %>
+<%end%>

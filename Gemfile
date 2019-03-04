@@ -62,3 +62,27 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.5"
+
+gem "carrierwave", "~> 1.2"
+
+gem "carrierwave-aws", "~> 1.3"
+
+gem "mini_magick", "~> 4.9"
+
+gem "omniauth-facebook", "~> 5.0"
+
+gem "faker", "~> 1.9"
+
+
+gem "stripe", "~> 3.29"
+
+gem 'bootstrap', '~> 4.0.0'
+
+gem 'jquery-rails'
+
+gem "better_errors", "~> 2.5"
+
+gem "binding_of_caller", "~> 0.8.0"
+
+
+gem "mailgun-ruby", "~> 1.1"

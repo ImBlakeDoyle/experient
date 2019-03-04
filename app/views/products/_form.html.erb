@@ -1,0 +1,64 @@
+<%= form_with(model: [@business, @product], local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-group">
+  <div class="field">
+    <%= form.label :name, for: "exampleFormControlInput1" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cost, for: "exampleFormControlInput1" %>
+    <%= form.text_field :cost, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location, for: "exampleFormControlInput1" %>
+    <%= form.text_field :location, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", id:"exampleFormControlTextarea1", rows:"3"  %>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :keywords %>
+    <%= form.text_area :keywords, class: "form-control", id:"exampleFormControlTextarea1", rows:"3" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "form-control-file", id: "exampleFormControlFile1"%>
+  </div>
+
+  <div class="form-group form-check">
+    <%= form.check_box :active, class: "form-check-input" %>
+    <%= form.label :active, class: "form-check-label" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Category", for: "exampleFormControlSelect1" %>
+    <%= form.select :category_id,  @category, class: "form-control", id: "exampleFormControlSelect1" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Age Group" %>
+    <%= form.select :age_group_id, @agegroup %>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>

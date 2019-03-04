@@ -1,0 +1,161 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+ @import "bootstrap";
+
+ h1 {
+     text-align: center;
+     color: red;
+ }
+
+ .stripe-button {
+     background-color: aqua;
+ }
+
+ .searchbar {
+     width: 900px;
+     margin: 0;
+ }
+
+.textfield{
+    width: 800px;
+    margin: 0;
+ }
+ .container {
+     margin: 0, 3em;
+ }
+ h2{
+     text-align: center;
+ }
+ .product-detail {
+     color: red;
+ }
+ .featured{
+     display: flex;
+     justify-content: space-between;
+     margin: 0;
+     margin-bottom: 30px;
+ }
+
+ .featured_title {
+     margin-bottom: 40px;
+     text-decoration: underline;
+ }
+
+ .search_link {
+    display: block;
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 50px;
+ }
+
+ .sign_link {
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.sign_buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.sign_in_button {
+    margin-right: 20px;
+    
+}
+
+ .underline {
+     text-align: center;
+     font-size: 1.8em;
+ }
+
+ .featured-content{
+     margin: 0;
+     display: inline-block;
+     max-width: 300px;
+ }
+
+ .picture_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .profile_pic {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .picture {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .bussiness_info_title {
+      text-decoration: underline;
+  }
+
+  .business_info {
+      margin: 9.5px 0;
+  }
+
+  .all_products {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .each_product {
+      margin: 10px;
+  }
+
+  .prod_title {
+      margin-bottom: 20px;
+  }
+
+  .active_buttons {
+      margin-top: 10px;
+      margin-right: 5px;
+  }
+
+  .error {
+      text-align: center;
+      margin: 50px;
+  }
+
+  .each_purchase {
+    margin: 30px 0;
+  }
+
+  .report_h1 {
+      margin-bottom: 40px;
+  }
+
+  .report_table {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px; 
+  }
+//  .featured-image{
+//      max-width: 300px;
+//  }
+//  .featured-name{
+//     max-width: 300px;
+//  }
+//  .featured-cost{
+//      max-width: 300px;
+//  }

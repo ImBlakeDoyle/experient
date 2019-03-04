@@ -1,0 +1,11 @@
+<%= form_with url: profile_path, local: true do |f| %>
+  <div>
+    <%= f.label "#{@hasavatar}"%>
+  </div>
+  <div>
+    <%= f.file_field :avatar%>
+  </div>
+  <div>
+    <%= f.submit%>
+  </div>
+<% end %>

@@ -1,0 +1,257 @@
+[33mcommit 0ffe2a2034eeb9570b05a46b215d96a8576be4e3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 90120c6 75fd967
+Author: Blake Doyle <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:51:09 2018 +1100
+
+    Merge pull request #7 from Santosh2167/profile_redirect_after_avatar
+    
+    redirect back to profile page after avatar upload
+
+[33mcommit 75fd9679544dc53ac7c168c6583ed8abfebed516[m[33m ([m[1;31morigin/profile_redirect_after_avatar[m[33m, [m[1;32mprofile_redirect_after_avatar[m[33m)[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:50:25 2018 +1100
+
+    redirect back to profile page after avatar upload
+
+[33mcommit 90120c6263c19907679ac1577c133387c7f0637b[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:46:25 2018 +1100
+
+    only show avatar if one is available
+
+[33mcommit 61524765632ad876a72601aea24c89b8dcc3ea78[m
+Merge: 808a6ab b6ccf0f
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:39:39 2018 +1100
+
+    Merge branch 'master' of https://github.com/Santosh2167/experient
+
+[33mcommit 808a6abc9944b73cd87cc4af150186e81bb96b5c[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:39:19 2018 +1100
+
+    create custom size for profile image
+
+[33mcommit 6cadb2560196990967c323ada3a6247b32d307bd[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:38:10 2018 +1100
+
+    show the profile picture on profile page
+
+[33mcommit b6ccf0f78698ff040e0b0971d29d317209a4b610[m
+Merge: 1498419 f3ca36e
+Author: Tyson Hofstetter <39513680+Tyson652@users.noreply.github.com>
+Date:   Wed Oct 31 14:18:18 2018 +1100
+
+    Merge pull request #6 from Santosh2167/view_businesses
+    
+    fixed business bugs
+
+[33mcommit f3ca36ee514a9599c55e7ffa726092552f41d191[m
+Author: Tyson Hofstetter <tysonh652@gmail.com>
+Date:   Wed Oct 31 14:16:32 2018 +1100
+
+    fixed business bugs
+
+[33mcommit 14984199879c72afceb2d3474c16e60fab0004dd[m
+Merge: 7db44f4 90be5a2
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:12:49 2018 +1100
+
+    fix avatar upload
+
+[33mcommit 7db44f46c54c05c2b849431f13ad28ae55c6df80[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 14:12:02 2018 +1100
+
+    fix avatar upload
+
+[33mcommit 90be5a24be28b23e781ada0e8d922cb2fb5d77f3[m
+Merge: f07f240 50e1c01
+Author: Tyson Hofstetter <39513680+Tyson652@users.noreply.github.com>
+Date:   Wed Oct 31 13:25:22 2018 +1100
+
+    Merge pull request #5 from Santosh2167/redirect_suppliers
+    
+    Redirect suppliers
+
+[33mcommit 50e1c0123633252dcfd39b5a291a9f2bae13fdaa[m
+Author: Tyson Hofstetter <tysonh652@gmail.com>
+Date:   Wed Oct 31 13:22:45 2018 +1100
+
+    finished businesses
+
+[33mcommit f07f240c4f26c8a0fb6003489ec224baca27f004[m
+Merge: 33c27f5 3f456a0
+Author: Blake Doyle <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 13:14:11 2018 +1100
+
+    Merge pull request #4 from Santosh2167/aws
+    
+    implement aws
+
+[33mcommit 3f456a0da9ef0c6a8552e8f47148f0e1bdab73ae[m[33m ([m[1;31morigin/aws[m[33m, [m[1;32maws[m[33m)[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 13:12:18 2018 +1100
+
+    implement aws
+
+[33mcommit 2c08deb824051a29974b976ad7b6b2d43b5cd2f5[m[33m ([m[1;31morigin/redirect_suppliers[m[33m)[m
+Author: Tyson Hofstetter <tysonh652@gmail.com>
+Date:   Wed Oct 31 12:49:54 2018 +1100
+
+    got businesses working
+
+[33mcommit 33c27f5ba9387f1f5f836adb17095305c241aa01[m
+Merge: 157fc2d 1a3102e
+Author: Blake Doyle <blake.doyle@hotmail.com.au>
+Date:   Wed Oct 31 09:22:42 2018 +1100
+
+    Merge pull request #3 from Santosh2167/profile_avatar
+    
+    Profile avatar - ability to save image from profile screen
+
+[33mcommit 5d5adeff0c6beab508e644eaf983d970984a97ab[m
+Author: Tyson Hofstetter <tysonh652@gmail.com>
+Date:   Tue Oct 30 17:06:22 2018 +1100
+
+    deleted migrations and suppliers model
+
+[33mcommit 1a3102ed8b7fdf9c06fd910036f68fd18a02d08f[m[33m ([m[1;31morigin/profile_avatar[m[33m, [m[1;32mprofile_avatar[m[33m)[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 17:00:41 2018 +1100
+
+    Ability to add avatar on profile page
+
+[33mcommit b1d52cb19ade3569b5a2eed5b61c6365ed0355cd[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 15:10:18 2018 +1100
+
+    Add function to check if the user has an avatar and change text on profile page accordingly
+
+[33mcommit 98bdf9a3b8dfba721301206a864beb8b3a1399b2[m
+Author: Tyson Hofstetter <tysonh652@gmail.com>
+Date:   Tue Oct 30 14:05:09 2018 +1100
+
+    redirect to supplier sign up
+
+[33mcommit 1216e901c96275f52dd16599146288b8c45fbf81[m
+Author: Tyson Hofstetter <tysonh652@gmail.com>
+Date:   Tue Oct 30 12:29:02 2018 +1100
+
+    got redirect working for suppliers
+
+[33mcommit 157fc2d2d17ef2df1227775a3bd6a9343a89d90c[m
+Merge: 6116ea9 1e7f021
+Author: Blake Doyle <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:54:44 2018 +1100
+
+    Merge pull request #2 from Santosh2167/customise_homepage
+    
+    Custom home page if user has logged in
+
+[33mcommit 1e7f021fd39891fb15acca4ad093fcdd15eb176a[m[33m ([m[1;31morigin/customise_homepage[m[33m, [m[1;32mcustomise_homepage[m[33m)[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:53:40 2018 +1100
+
+    Custom home page if user has logged in
+    
+    Co-authored-by: Tyson <technics652@gmail.com>
+
+[33mcommit 6116ea929d868a1cf8ba98017b7386797ed686c1[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:51:33 2018 +1100
+
+    Fix is_supplier boolean
+    
+    Co-authored-by: Tyson <technics652@gmail.com>
+
+[33mcommit f4e703a3c5237b791049b1ac0a1c8bcf6f72e729[m
+Merge: 9d3e132 596dc34
+Author: Blake Doyle <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:27:24 2018 +1100
+
+    Merge pull request #1 from Santosh2167/custom_registration
+    
+    Custom registration
+
+[33mcommit 596dc340697f93bf47878593c79b1890a2ba8527[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:26:03 2018 +1100
+
+    Change the edit user info form
+    
+    Co-authored-by: Tyson <technics652@gmail.com>
+
+[33mcommit 3a7693efcfead67ee075219632b2ce254c051ce1[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:23:48 2018 +1100
+
+    Ability to save custom registration fields
+    
+    Co-authored-by: Tyson <technics652@gmail.com>
+
+[33mcommit 5b875e89f0c78aed80afa746090fbd147d44f0ab[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Tue Oct 30 11:19:59 2018 +1100
+
+    Create custom registration field
+    
+    Co-authored-by: Tyson <technics652@gmail.com>
+
+[33mcommit 9d3e132ec399d01e491b104aa314d19a696c2be0[m
+Merge: 306014d 32b5a8d
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Mon Oct 29 16:36:24 2018 +1100
+
+    Merge branch 'create_homepage'
+
+[33mcommit 32b5a8d96a7f8ff58db5dbdd1b7c87ffd444595d[m[33m ([m[1;31morigin/create_homepage[m[33m, [m[1;32mcreate_homepage[m[33m)[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Mon Oct 29 16:35:47 2018 +1100
+
+    testing collaboration
+
+[33mcommit 306014df72113432dff059be5511071cef06d372[m
+Merge: f8898e7 e2a5d17
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Mon Oct 29 16:07:49 2018 +1100
+
+    Merge branch 'master' of https://github.com/Santosh2167/experient
+
+[33mcommit e2a5d1735c47559342e3458538a6717ef83a8876[m
+Author: Santosh <santosh.poudyal@gmail.com>
+Date:   Mon Oct 29 16:01:53 2018 +1100
+
+    created home page view
+
+[33mcommit f8898e7ce4d292e03cfe4d5cafebc0c3be68f4e0[m
+Merge: a8a5777 12011f2
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Mon Oct 29 15:54:58 2018 +1100
+
+    Merge branch 'blake'
+
+[33mcommit a8a5777986005294c02e3208eb4b50611fc6528b[m[33m ([m[1;31morigin/devise[m[33m, [m[1;32mdevise[m[33m)[m
+Author: Santosh <santosh.poudyal@gmail.com>
+Date:   Mon Oct 29 15:52:36 2018 +1100
+
+    added homepage
+
+[33mcommit 892d5e6d1ff1835a0f1727c7e0bb8c1109bb6c45[m
+Author: Santosh <santosh.poudyal@gmail.com>
+Date:   Mon Oct 29 15:45:48 2018 +1100
+
+    initialised devise
+
+[33mcommit 12011f20a209b248c83c93117139517f065f5ca4[m
+Author: Blake <blake.doyle@hotmail.com.au>
+Date:   Mon Oct 29 15:34:19 2018 +1100
+
+    blake initialize
+
+[33mcommit 0dccd1fc469c727679387ae97f1676cab353cb34[m
+Author: Santosh <santosh.poudyal@gmail.com>
+Date:   Mon Oct 29 15:26:30 2018 +1100
+
+    Created a rails project and added devise gem in it

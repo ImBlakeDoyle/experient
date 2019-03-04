@@ -1,0 +1,51 @@
+<h1>History</h1>
+
+<div class="all_products">
+<% @my_products.each do |x| if x.active? == false %>
+<div class="card each_product" style="width: 18rem;">
+<%=link_to business_product_path(business_id: x.user.id, id: x.id) do %>
+<%= image_tag (x.image_url), class: "card-img-top", src: ".../100px180/", alt: "Card image cap" %>
+<% end %>
+    <div class="card-body">
+    <h5 class="card-title"><%= x.name%></h5>
+    <p class="card-text"><%= x.description%></p>
+    <div class = "featured-cost">
+    $<%= x.cost%>
+    </div>
+    <%=link_to "Edit",edit_business_product_path(id: x.id, business_id: x.user.id), class: "btn btn-primary active_buttons"%>
+    <%=link_to "View Detail",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary active_buttons"%>
+    <% if x.active? == true %>
+        <span><%= link_to 'Make Product Inactive', inactive_business_product_path(business_id: x.user.id, id: x.id), method: :put, class: "btn btn-primary active_buttons" %></span>
+      <% else %>
+        <span><%= link_to 'Make Product Active', inactive_business_product_path(business_id: x.user.id, id: x.id), method: :put, class: "btn btn-primary active_buttons" %></span>
+      <% end %>
+  </div>
+</div>
+<% end %>
+<% end %>
+</div> 
+
+
+ <!--
+    <% @my_products.each do |product| if product.active? == false %>
+      
+        <h3>Title: <%= link_to product.name, business_product_path(business_id: product.user.id, id: product.id)  %></h3>
+        <div>Price: $<%= product.cost %></div>
+        <div>Location: <%= product.location %></div>
+        <div>isActive?: <%= product.active %></div>
+        <div>Category: <%= product.category %></div>
+        <div>keywords: <%= product.keywords %></div>
+        <div>Description: <%= product.description %></div>
+        <div>
+          <span><%=link_to "View Detail",business_product_path(business_id: product.user.id, id: product.id)%></span>
+          <span><%=link_to "Buy Me",business_product_path(business_id: product.user.id, id: product.id)%></span>
+          <% if product.active? == true %>
+          <span><%= link_to 'Make Product Inactive', inactive_business_product_path(business_id: product.user.id, id: product.id), method: :put %></span>
+          <% else %>
+          <span><%= link_to 'Make Product Active', inactive_business_product_path(business_id: product.user.id, id: product.id), method: :put %></span>
+          <% end %>
+        </div>
+        <br>
+      <% end %>
+     <% end %>
+     -->

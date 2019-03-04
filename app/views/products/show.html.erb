@@ -1,0 +1,100 @@
+
+<h1 class="product-detail">Product Detail</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<div>
+  <%= image_tag @product.image_url%>
+</div>
+
+<p>
+  <strong>Cost: $</strong>
+  <%= @product.cost %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @product.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Age Group:</strong>
+  <%= @product.age_group.range %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @product.keywords %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category.category %>
+</p>
+
+<p>
+  <strong>Reviews:</strong>
+  <% if @product.transactions %>
+    <% @product.transactions.each do |t| %>
+    <div>
+    Rating: <%= t.product_review.rating%>
+    </div>
+    <div>
+    Comment: <%= t.product_review.comment%>
+    </div>
+    <% end %>
+  <% end %>
+</p>
+
+
+<%= form_with url: payment_path do %>
+  <div>
+  <input type="hidden" name="service_value[price]" value="<%=@product.cost%>" />
+  <input type="hidden" name="service_value[id]" value="<%=@product.id%>" />
+  
+
+  </div>
+  
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+       </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.application.credentials.stripe[:publishable]%>"
+          data-description="What a good purchase !!! <%=current_user.first_name%>"
+          data-email="<%=current_user.email%>"
+          data-amount= <%=(@product.cost*100)%>
+          data-locale="auto">
+   </script>
+   
+<% end %>
+ 
+
+
+  <% if @product.user_id == current_user.id %>
+  <%# <%= link_to 'Edit', edit_business_product_path %> 
+  <% if @product.active? == true %>
+  <%# <%= link_to 'Make Product Inactive', inactive_business_product_path(@product, business_id: @product.user.business.id ), method: :put %>
+  <% else %>
+  <%= link_to 'Make Product Active', inactive_business_product_path(@product, business_id: @product.user.business.id ), method: :put %>
+  <% end %>
+  <% end %>
+
+
+
+

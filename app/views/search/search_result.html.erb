@@ -1,0 +1,38 @@
+<h3>This page displays Search result</h3>
+
+<!--
+    <% @products.each do |product| %>
+      
+        <h3>Title: <%= link_to product.name, business_product_path(business_id: product.user.id, id: product.id)  %></h3>
+        <div>Price: $<%= product.cost %></div>
+        <div>Location: <%= product.location %></div>
+        <div>isActive?: <%= product.active %></div>
+        <div>Category: <%= product.category %></div>
+        <div>keywords: <%= product.keywords %></div>
+        <div>Description: <%= product.description %></div>
+        <div>
+          <span><%=link_to "View Detail",business_product_path(business_id: product.user.id, id: product.id)%></span>
+          <span><%=link_to "Buy Me",business_product_path(business_id: product.user.id, id: product.id)%></span>
+        </div>
+        <br>
+     <% end %>
+     -->
+
+<div class="all_products">
+<% @products.each do |x| %>
+<div class="card each_product" style="width: 18rem;">
+<%=link_to business_product_path(business_id: x.user.id, id: x.id) do %>
+<%= image_tag (x.image_url), class: "card-img-top", src: ".../100px180/", alt: "Card image cap" %>
+<% end %>
+    <div class="card-body">
+    <h5 class="card-title"><%= x.name%></h5>
+    <p class="card-text"><%= x.description%></p>
+    <div class = "featured-cost">
+    $<%= x.cost%>
+    </div>
+    <%=link_to "Buy Me",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary"%>
+    <%=link_to "View Detail",business_product_path(business_id: x.user.id, id: x.id), class: "btn btn-primary"%>
+  </div>
+</div>
+<% end %>
+</div> 

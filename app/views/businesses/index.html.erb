@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Businesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trading name</th>
+      <th>Registered business name</th>
+      <th>Business address</th>
+      <th>Post code</th>
+      <th>Abn</th>
+      <th>Phone number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_businesses.each do |business| %>
+      <tr>
+        <td><%= business.trading_name %></td>
+        <td><%= business.registered_business_name %></td>
+        <td><%= business.business_address %></td>
+        <td><%= business.post_code %></td>
+        <td><%= business.abn %></td>
+        <td><%= business.phone_number %></td>
+        <td><%= link_to 'Show', business %></td>
+        <td><%= link_to 'Edit', edit_business_path(business) %></td>
+        <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Business', new_business_path %>
+<%= link_to 'Home', root_path %>
